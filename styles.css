@@ -1,198 +1,648 @@
-/* charity: water Brand Colors & Fonts
+/* =========================================
+   charity: water Landing Page
+   Brand-inspired colors and beginner-friendly CSS
+========================================= */
 
-Primary Colors:
-- Yellow:     #FFC907
-- Blue:       #2E9DF7
+/* ---------- Brand Colors ---------- */
 
-Secondary Colors:
-- Light Blue: #8BD1CB
-- Green:      #4FCB53
-- Orange:     #FF902A
-- Red:        #F5402C
-- Dark Green: #159A48
-- Pink:       #F16061
+:root {
+  --yellow: #FFC907;
+  --blue: #2E9DF7;
+  --light-blue: #8BD1CB;
+  --green: #4FCB53;
+  --orange: #FF902A;
+  --red: #F5402C;
+  --dark-green: #159A48;
+  --pink: #F16061;
 
-Fonts:
-- Proxima Nova
-- Avenir
+  --black: #222222;
+  --white: #FFFFFF;
+  --cream: #FFF8E7;
+}
 
-*/
 
-/* 
-  Charity: Water Landing Page Styles
-  This CSS uses the provided color palette and beginner-friendly styles.
-*/
+/* ---------- Global Styles ---------- */
 
-/* Set up the main font and background color for the whole page */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: #f4f8fb; /* Soft light blue for a fresh look */
-  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
   margin: 0;
   padding: 0;
-  color: #222;
+
+  font-family: 'Proxima Nova', 'Avenir', Arial, sans-serif;
+
+  background-color: var(--white);
+  color: var(--black);
+
+  line-height: 1.5;
 }
 
-/* Add a slight shadow and rounded corners to each section for depth */
-section {
-  background: #fff; /* White background for sections */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07); /* Soft blue shadow */
-  margin: 24px 10px; /* Space between sections */
-  padding: 24px 16px;
+img {
+  max-width: 100%;
+  display: block;
 }
 
-/* Hero Section Styles */
-.hero {
-  position: relative; /* Needed for overlay */
-  /* Set a background image that covers the whole section */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
-  background-size: cover;      /* Make the image cover the whole area */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat;
-  color: #fff;                 /* White text for contrast */
-  text-align: center;          /* Center the text */
-  padding: 60px 20px;          /* Add space above and below */
-  border-radius: 0 0 16px 16px; /* Only round bottom corners */
-
-  /* Add a dark overlay for better text readability */
-  /* This uses a simple linear-gradient overlay */
-  background-blend-mode: darken;
-  background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
-}
-
-/* Make the headline bold and modern */
-.hero h1 {
-  font-size: 2.5em;
-  font-weight: bold;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Soft shadow for readability */
-}
-
-/* Style the subheadline */
-.hero p {
-  font-size: 1.2em;
-  margin-top: 0;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.12);
-}
-
-/* Story Section Styles */
-.story {
-  background-color: #8BD1CB; /* Secondary Light Blue */
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
-}
-
-/* Add accent color to section headings */
-h2 {
-  color: #2E9DF7; /* Primary blue */
-  margin-top: 0;
-  font-weight: bold;
-}
-
-/* Call-to-Action Section Styles */
-.call-to-action {
-  background-color: #FFC907; /* Primary Yellow */
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
-}
-
-/* Style the impact story image */
-.impact-image {
-  width: 100%;
-  max-width: 320px;
-  border-radius: 10px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
-}
-
-/* Donate Button Styles */
-.donate-button {
-  display: inline-block;
-  background-color: #4FCB53; /* Green */
-  color: #fff;
-  padding: 14px 32px;
+a {
   text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 1.1em;
-  margin-top: 18px;
-  box-shadow: 0 2px 8px rgba(79, 203, 83, 0.10);
-  transition: background 0.3s, transform 0.2s;
-  border: none;
-  cursor: pointer;
 }
 
-/* Change button color when hovered */
-.donate-button:hover {
-  background-color: #159A48; /* Dark Green */
-  transform: translateY(-2px) scale(1.04); /* Slight lift */
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero {
+  display: flex;
+
+  width: 100%;
+  min-height: 720px;
+
+  background-color: var(--cream);
 }
 
-/* Add some spacing between sections */
-section {
-  margin-bottom: 20px;
+
+/* Left side */
+
+.hero-text {
+  width: 45%;
+
+  padding: 55px 55px 60px 70px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-/* 
-  Media Queries for Responsive Design
-  Media queries help make your website look good on different screen sizes,
-  like phones (small screens) and computers (large screens).
-*/
 
-/* This media query applies styles when the screen is 600px wide or less (like on most phones) */
-@media (max-width: 600px) {
-  /* Make hero section padding smaller on small screens */
+/* Logo */
+
+.logo {
+  width: 260px;
+  margin-bottom: 45px;
+}
+
+
+/* Headline */
+
+.hero h1 {
+  margin: 0 0 24px 0;
+
+  font-size: 64px;
+  line-height: 1.05;
+  font-weight: 700;
+
+  letter-spacing: -1px;
+
+  color: var(--black);
+}
+
+
+/* Subheadline */
+
+.hero-subheadline {
+  max-width: 560px;
+
+  margin: 0 0 34px 0;
+
+  font-size: 27px;
+  line-height: 1.35;
+  font-weight: 400;
+
+  color: var(--black);
+}
+
+
+/* Primary CTA */
+
+.primary-button {
+  display: inline-block;
+  align-self: flex-start;
+
+  background-color: var(--yellow);
+  color: var(--black);
+
+  padding: 16px 34px;
+
+  border-radius: 28px;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Small supporting copy */
+
+.microcopy {
+  margin-top: 28px;
+
+  font-size: 20px;
+  font-weight: 400;
+
+  color: var(--black);
+}
+
+
+/* Right side image */
+
+.hero-image-container {
+  width: 55%;
+  min-height: 720px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  min-height: 720px;
+}
+
+
+/* =========================================
+   PROGRESS SECTION
+========================================= */
+
+.progress-section {
+  padding: 90px 70px 100px;
+
+  background-color: var(--cream);
+
+  text-align: center;
+}
+
+
+/* Section heading */
+
+.section-heading {
+  max-width: 900px;
+  margin: 0 auto 70px;
+}
+
+.section-heading h2 {
+  margin: 0 0 18px;
+
+  font-size: 50px;
+  line-height: 1.1;
+  font-weight: 700;
+
+  color: var(--black);
+}
+
+.section-heading p {
+  margin: 0;
+
+  font-size: 24px;
+  line-height: 1.45;
+
+  color: var(--black);
+}
+
+
+/* Milestone row */
+
+.milestones {
+  position: relative;
+
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding-top: 20px;
+}
+
+
+/* Connecting line */
+
+.milestones::before {
+  content: "";
+
+  position: absolute;
+
+  top: 52px;
+  left: 5%;
+  right: 5%;
+
+  height: 4px;
+
+  background-color: var(--light-blue);
+
+  z-index: 0;
+}
+
+
+/* Each milestone */
+
+.milestone {
+  position: relative;
+  z-index: 1;
+
+  width: 120px;
+
+  text-align: center;
+}
+
+.milestone img {
+  width: 62px;
+  height: 62px;
+
+  object-fit: contain;
+
+  margin: 0 auto 14px;
+
+  /* Prevent the progress line from showing through
+     the transparent parts of the Jerry Can image */
+  background-color: var(--cream);
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.milestone p {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  color: var(--black);
+}
+
+
+/* Emphasize the current milestone */
+
+.milestone.current img {
+  width: 76px;
+  height: 76px;
+
+  transform: translateY(-7px);
+
+  background-color: var(--cream);
+  padding: 6px;
+}
+
+
+/* Future milestones stay fully visible */
+
+.milestone.future {
+  opacity: 1;
+}
+
+.milestone.future p {
+  color: #777777;
+}
+
+
+/* =========================================
+   IMPACT CARD
+========================================= */
+
+.impact-card {
+  max-width: 420px;
+
+  margin: 70px auto 0;
+  padding: 34px 32px;
+
+  background-color: var(--yellow);
+
+  border-radius: 24px;
+
+  text-align: center;
+}
+
+.impact-label {
+  margin: 0 0 8px;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.impact-card h3 {
+  margin: 0 0 8px;
+
+  font-size: 38px;
+  line-height: 1.1;
+}
+
+.impact-card p {
+  font-size: 20px;
+}
+
+
+/* Secondary button */
+
+.secondary-button {
+  display: inline-block;
+
+  margin-top: 14px;
+
+  color: var(--blue);
+
+  font-size: 17px;
+  font-weight: 700;
+
+  transition: transform 0.2s ease;
+}
+
+.secondary-button:hover {
+  transform: translateX(5px);
+}
+
+
+/* =========================================
+   STORY SECTION
+========================================= */
+
+.story-section {
+  display: flex;
+
+  min-height: 620px;
+
+  background-color: var(--white);
+}
+
+
+/* Story image */
+
+.story-image {
+  width: 50%;
+}
+
+.story-image img {
+  width: 100%;
+  height: 100%;
+
+  min-height: 620px;
+
+  object-fit: cover;
+}
+
+
+/* Story copy */
+
+.story-text {
+  width: 50%;
+
+  padding: 90px 80px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  color: var(--blue);
+}
+
+.story-text h2 {
+  margin: 0 0 24px;
+
+  font-size: 48px;
+  line-height: 1.1;
+
+  color: var(--black);
+}
+
+.story-text p {
+  max-width: 600px;
+
+  margin: 0;
+
+  font-size: 22px;
+  line-height: 1.55;
+}
+
+
+/* =========================================
+   FINAL CTA
+========================================= */
+
+.final-cta {
+  padding: 100px 30px;
+
+  text-align: center;
+
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.final-cta h2 {
+  margin: 0 0 18px;
+
+  font-size: 52px;
+  line-height: 1.1;
+
+  color: var(--white);
+}
+
+.final-cta p {
+  max-width: 700px;
+
+  margin: 0 auto 32px;
+
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 900px) {
+
+  /* Hero becomes stacked */
+
   .hero {
-    padding: 32px 8px;
-    font-size: 1em;
+    flex-direction: column;
   }
 
-  /* Make headline font size smaller so it fits on small screens */
+  .hero-text,
+  .hero-image-container {
+    width: 100%;
+  }
+
+  .hero-text {
+    padding: 40px 30px 50px;
+  }
+
+  .logo {
+    width: 220px;
+    margin-bottom: 32px;
+  }
+
   .hero h1 {
-    font-size: 1.4em;
+    font-size: 48px;
   }
 
-  /* Make subheadline font size smaller */
-  .hero p {
-    font-size: 1em;
+  .hero-subheadline {
+    font-size: 22px;
   }
 
-  /* Make story and call-to-action sections have less padding */
-  .story,
-  .call-to-action,
-  .donation-section {
-    padding: 14px 8px;
+  .hero-image-container,
+  .hero-image {
+    min-height: 460px;
   }
 
-  /* Make impact story image smaller and stack above the text */
-  .impact-content {
-    display: block; /* Stack items vertically */
-    text-align: center;
+
+  /* Progress section */
+
+  .progress-section {
+    padding: 70px 30px;
   }
 
-  .impact-image {
-    width: 90%;    /* Make image take up most of the width */
-    max-width: 220px;
+  .milestones {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    max-width: 400px;
   }
+
+  .milestones::before {
+    top: 0;
+    bottom: 0;
+
+    left: 38px;
+    right: auto;
+
+    width: 4px;
+    height: auto;
+  }
+
+  .milestone {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    text-align: left;
+
+    margin-bottom: 32px;
+  }
+
+  .milestone img {
+    margin: 0 24px 0 0;
+
+    width: 62px;
+    height: 62px;
+  }
+
+  .milestone.current img {
+    width: 68px;
+    height: 68px;
+
+    transform: none;
+  }
+
+
+  /* Story stacks */
+
+  .story-section {
+    flex-direction: column;
+  }
+
+  .story-image,
+  .story-text {
+    width: 100%;
+  }
+
+  .story-image img {
+    min-height: 420px;
+  }
+
+  .story-text {
+    padding: 60px 30px;
+  }
+
 }
 
-/* This media query applies styles when the screen is wider than 600px (like on tablets and computers) */
-@media (min-width: 601px) {
-  /* Show image and text side by side in the impact story */
-  .impact-content {
-    display: flex;           /* Place items in a row */
-    align-items: center;     /* Vertically center items */
-    justify-content: center; /* Center the whole group */
-    gap: 28px;               /* Space between image and text */
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
+
+@media (max-width: 600px) {
+
+  .hero-text {
+    padding: 32px 22px 40px;
   }
 
-  .impact-image {
-    width: 300px;
+  .logo {
+    width: 190px;
   }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero-subheadline {
+    font-size: 19px;
+  }
+
+  .primary-button {
+    font-size: 18px;
+    padding: 14px 26px;
+  }
+
+  .microcopy {
+    font-size: 17px;
+  }
+
+
+  /* Progress */
+
+  .section-heading h2 {
+    font-size: 38px;
+  }
+
+  .section-heading p {
+    font-size: 20px;
+  }
+
+
+  /* Story */
+
+  .story-text h2 {
+    font-size: 38px;
+  }
+
+  .story-text p {
+    font-size: 19px;
+  }
+
+
+  /* Final CTA */
+
+  .final-cta h2 {
+    font-size: 40px;
+  }
+
+  .final-cta p {
+    font-size: 19px;
+  }
+
 }
